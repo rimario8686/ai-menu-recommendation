@@ -36,7 +36,8 @@ async function getMenuRecommendation(mood, weather, menuData) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer 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`
+      'Authorization': `Bearer ${process.env.NEXT_PUBLIC_KIROS_KEY_PROJ}` // 발급받은 OpenAI API 키
+
  // 발급받은 OpenAI API 키를 여기에 입력하세요.
     },
     body: JSON.stringify({
