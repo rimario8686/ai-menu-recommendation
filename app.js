@@ -30,15 +30,16 @@ async function getMenuData() {
 async function getMenuRecommendation(mood, weather, menuData) {
   console.log("GPT-3.5로 메뉴 추천 요청 중...");
 
-  const apiKey = process.env.NEXT_PUBLIC_KIROS_KEY_PROJ; // 환경 변수를 참조합니다.
-  
   const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
+
+  // 환경변수 참조하는 부분 수정
+  const apiKey = process.env.NEXT_PUBLIC_KIROS_KEY_PROJ; // vercel에서 설정한 환경 변수 사용
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}` // 여기에 환경 변수를 사용합니다.
+      'Authorization': `Bearer ${apiKey}` // 발급받은 OpenAI API 키
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
