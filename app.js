@@ -29,9 +29,6 @@ async function getMenuData() {
 // GPT-3.5 API를 호출하여 메뉴를 추천받는 함수
 async function getMenuRecommendation(mood, weather, menuData) {
   console.log("GPT-3.5로 메뉴 추천 요청 중...");
-  
-  // 환경 변수 출력
-  console.log("API 키 확인: ", process.env.KIROS_KEY_PROJ); // 환경 변수 확인을 위한 로그 출력
 
   const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
 
@@ -39,7 +36,7 @@ async function getMenuRecommendation(mood, weather, menuData) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${process.env.KIROS_KEY_PROJ}` // 발급받은 OpenAI API 키
+      'Authorization': `Bearer ${process.env.NEXT_PUBLIC_KIROS_KEY_PROJ}` // 환경 변수로부터 API 키를 가져옴
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
