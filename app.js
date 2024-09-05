@@ -32,8 +32,8 @@ async function getMenuRecommendation(mood, weather, menuData) {
 
   const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
 
-  // 환경변수 참조하는 부분 수정
-  const apiKey = process.env.NEXT_PUBLIC_KIROS_KEY_PROJ; // vercel에서 설정한 환경 변수 사용
+  // 직접적으로 API 키를 사용 (이렇게 하면 빌드 시점에서 환경변수가 자동으로 삽입됩니다)
+  const apiKey = process.env.NEXT_PUBLIC_KIROS_KEY_PROJ;
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
