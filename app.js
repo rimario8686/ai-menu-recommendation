@@ -36,7 +36,7 @@ async function getMenuRecommendation(mood, weather, menuData) {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer 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` // 발급받은 OpenAI API 키를 여기에 입력하세요.
+      'Authorization': `Bearer ${process.env.KIROS_KEY_PROJ}` // Vercel 환경 변수 사용
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
