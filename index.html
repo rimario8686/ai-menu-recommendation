@@ -4,16 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI 메뉴 추천</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #a0d9d9;
+      font-family: Arial, sans-serif;
+    }
+    #app {
+      margin: 50px auto;
+      padding: 20px;
+      width: 300px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #recommendation {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>AI 메뉴 추천</h1>
-    <input type="text" id="mood" placeholder="기분을 입력하세요" />
+
+  <div id="app">
+    <h2>AI 메뉴 추천</h2>
+    <input type="text" id="mood" placeholder="기분을 입력하세요">
     <button onclick="recommendMenu()">메뉴 추천</button>
-    <div id="recommendation"></div>
+    <div id="recommendation">여기에 추천된 메뉴가 표시됩니다.</div>
   </div>
-  <script src="app.js"></script>
+
+  <script src="app.js"></script> <!-- JavaScript 파일을 올바르게 연결 -->
+  
 </body>
 </html>
