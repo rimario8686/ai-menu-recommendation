@@ -32,14 +32,11 @@ async function getMenuRecommendation(mood, weather, menuData) {
 
   const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
 
-  // 환경 변수에서 API 키를 가져옴
-  const apiKey = process.env.NEXT_PUBLIC_KIROS_KEY_PROJ;
-
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}` // 환경 변수로부터 API 키를 가져옴
+      'Authorization': `Bearer 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` // 발급받은 OpenAI API 키를 여기에 입력하세요.
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
