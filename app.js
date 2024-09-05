@@ -32,17 +32,20 @@ async function getMenuRecommendation(mood, weather, menuData) {
 
   const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
 
-const response = await fetch('https://api.openai.com/v1/chat/completions', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${process.env.KIROS_KEY_PROJ}` // 환경 변수에서 API 키를 불러옴
-  },
-  body: JSON.stringify({
-    model: 'gpt-3.5-turbo',
-    messages: [{ role: 'system', content: 'You are a helpful assistant.' }, { role: 'user', content: '메뉴 추천해줘' }],
-  }),
-});
+  const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization':  'Authorization': `Bearer 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` // 발급받은 OpenAI API 키를 여기에 입력하세요.
+    },
+    body: JSON.stringify({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { "role": "system", "content": "You are a helpful assistant that recommends menus based on mood and weather." },
+        { "role": "user", "content": `기분은 ${mood}이고, 현재 기온은 ${weather.temperature}도이며, 강수량은 ${weather.precipitation}mm, 구름양은 ${weather.cloudCover}%입니다. 다음 상점의 메뉴 중 적절한 메뉴를 추천해 주세요:\n${menuString}` }
+      ]
+    })
+  });
 
 
   const data = await response.json();
