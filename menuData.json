@@ -1,0 +1,229 @@
+{
+  "menus": [
+    {
+      "name": "수제청(유자차)",
+      "category": "음료",
+      "description": "유자청을 직접 담가 만든 상큼한 유자차"
+    },
+    {
+      "name": "수제 팥빙수",
+      "category": "시즌 메뉴",
+      "description": "달콤한 팥과 쫀득한 떡이 올라간 여름 한정 팥빙수"
+    },
+    {
+      "name": "사과주스(100%)_탄산",
+      "category": "음료",
+      "description": "100% 사과 원액에 톡 쏘는 탄산이 더해진 사과주스"
+    },
+    {
+      "name": "사과주스(100%)",
+      "category": "음료",
+      "description": "100% 순수 사과로 만든 건강한 주스"
+    },
+    {
+      "name": "분다버그(망고)",
+      "category": "음료",
+      "description": "진한 망고 맛이 특징인 호주산 분다버그 음료"
+    },
+    {
+      "name": "분다버그(생강)",
+      "category": "음료",
+      "description": "독특한 생강 맛이 가미된 호주산 분다버그 음료"
+    },
+    {
+      "name": "라벤더",
+      "category": "차",
+      "description": "편안한 향이 특징인 라벤더 허브차"
+    },
+    {
+      "name": "페퍼민트",
+      "category": "차",
+      "description": "상쾌한 향이 매력적인 페퍼민트 허브차"
+    },
+    {
+      "name": "루이보스",
+      "category": "차",
+      "description": "남아프리카에서 온 카페인 없는 루이보스차"
+    },
+    {
+      "name": "얼그레이",
+      "category": "차",
+      "description": "베르가못 향이 가미된 클래식한 얼그레이 차"
+    },
+    {
+      "name": "캐모마일",
+      "category": "차",
+      "description": "스트레스를 풀어주는 따뜻한 캐모마일 허브차"
+    },
+    {
+      "name": "에이드(레몬)",
+      "category": "음료",
+      "description": "상큼한 레몬을 듬뿍 담은 레몬 에이드"
+    },
+    {
+      "name": "에이드(자몽)",
+      "category": "음료",
+      "description": "자몽의 쌉싸름함이 돋보이는 자몽 에이드"
+    },
+    {
+      "name": "밀크티라떼",
+      "category": "음료",
+      "description": "부드러운 우유와 홍차가 어우러진 밀크티 라떼"
+    },
+    {
+      "name": "초코라떼",
+      "category": "음료",
+      "description": "진한 초콜릿 풍미가 느껴지는 달콤한 초코라떼"
+    },
+    {
+      "name": "녹차라떼",
+      "category": "음료",
+      "description": "신선한 녹차와 우유의 조화, 녹차라떼"
+    },
+    {
+      "name": "복숭아 아이스티",
+      "category": "음료",
+      "description": "달콤한 복숭아 향이 가득한 아이스티"
+    },
+    {
+      "name": "서리태라떼",
+      "category": "음료",
+      "description": "직접 재배한 서리태로 만든 고소한 크림라떼"
+    },
+    {
+      "name": "모카라떼",
+      "category": "음료",
+      "description": "커피와 초콜릿이 조화롭게 어우러진 모카라떼"
+    },
+    {
+      "name": "바닐라라떼",
+      "category": "음료",
+      "description": "달콤한 바닐라 향이 가득한 바닐라라떼"
+    },
+    {
+      "name": "카페라떼",
+      "category": "음료",
+      "description": "부드러운 우유와 에스프레소가 어우러진 카페라떼"
+    },
+    {
+      "name": "아메리카노",
+      "category": "음료",
+      "description": "깊고 진한 커피의 맛을 느낄 수 있는 아메리카노"
+    },
+    {
+      "name": "트리플베리잼",
+      "category": "기타",
+      "description": "블루베리, 라즈베리, 블랙베리가 듬뿍 들어간 잼"
+    },
+    {
+      "name": "딸기잼",
+      "category": "기타",
+      "description": "유기농 설탕으로 만든 과육이 풍부한 딸기잼"
+    },
+    {
+      "name": "호밀100%식빵",
+      "category": "식빵",
+      "description": "중독적인 맛을 자랑하는 호밀 100% 식빵"
+    },
+    {
+      "name": "슈퍼씨앗식빵",
+      "category": "식빵",
+      "description": "통곡물을 그대로 넣어 만든 건강한 식빵"
+    },
+    {
+      "name": "통밀식빵",
+      "category": "식빵",
+      "description": "통밀 90%와 호밀 10%로 만든 건강한 식빵"
+    },
+    {
+      "name": "홍국쌀식빵",
+      "category": "식빵",
+      "description": "홍국쌀로 만든 부드럽고 건강한 국내산 식빵"
+    },
+    {
+      "name": "삼봉 단호박 식빵",
+      "category": "식빵",
+      "description": "단호박을 반죽해 넣어 만든 촉촉한 식빵"
+    },
+    {
+      "name": "딸기식빵",
+      "category": "식빵",
+      "description": "딸기를 반죽해 만든 달콤한 딸기식빵"
+    },
+    {
+      "name": "화이트모닝롤",
+      "category": "롤빵",
+      "description": "쫄깃하고 담백한 맛의 화이트모닝롤"
+    },
+    {
+      "name": "소금빵",
+      "category": "롤빵",
+      "description": "짭짤한 맛이 매력적인 우리밀 통밀 소금빵"
+    },
+    {
+      "name": "단팥빵",
+      "category": "롤빵",
+      "description": "달콤한 팥과 고소한 호두가 들어간 단팥빵"
+    },
+    {
+      "name": "무화과 크림치즈 바게트",
+      "category": "바게트",
+      "description": "무화과와 크림치즈를 넣은 쫄깃한 통밀 바게트"
+    },
+    {
+      "name": "카카호두 바게트",
+      "category": "바게트",
+      "description": "호두가 듬뿍 들어간 바삭한 카카오 바게트"
+    },
+    {
+      "name": "프랑스 바게트(플레인)",
+      "category": "바게트",
+      "description": "통밀로 만든 정통 프랑스 바게트"
+    },
+    {
+      "name": "푸가스",
+      "category": "바게트",
+      "description": "납작한 잎 모양으로 올리브와 치즈가 들어간 빵"
+    },
+    {
+      "name": "치아바타(올리브)",
+      "category": "치아바타",
+      "description": "올리브와 고급 소금으로 만든 촉촉한 치아바타"
+    },
+    {
+      "name": "치아바타(플레인)",
+      "category": "치아바타",
+      "description": "프리미엄 올리브 오일로 만든 담백한 치아바타"
+    },
+    {
+      "name": "해방촌 깜빠뉴(치즈)",
+      "category": "깜빠뉴",
+      "description": "통밀 배합으로 만든 고소한 치즈 깜빠뉴"
+    },
+    {
+      "name": "천마산 스페셜",
+      "category": "깜빠뉴",
+      "description": "7일간 발효한 민트씨 시그니처 깜빠뉴"
+    },
+    {
+      "name": "올리브 치즈감자빵",
+      "category": "기타 빵",
+      "description": "올리브와 치즈, 감자를 넣어 만든 독특한 맛의 빵"
+    },
+    {
+      "name": "초코가 호두두",
+      "category": "기타 빵",
+      "description": "다크초콜릿과 호두가 들어간 진한 초코빵"
+    },
+    {
+      "name": "해방촌 깜빠뉴(플레인)",
+      "category": "깜빠뉴",
+      "description": "전통 방식으로 만든 구수한 플레인 깜빠뉴"
+    },
+    {
+      "name": "해방촌 깜빠뉴(호두)",
+      "category": "깜빠뉴",
+      "description": "호두가 들어간 씹을수록 고소한 깜빠뉴"
+    }
+  ]
+}
