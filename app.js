@@ -30,13 +30,16 @@ async function getMenuData() {
 async function getMenuRecommendation(mood, weather, menuData) {
   console.log("GPT-3.5로 메뉴 추천 요청 중...");
 
+  // 환경 변수 출력 (디버깅을 위해 확인)
+  console.log("API 키 확인: ", process.env.KIROS_KEY_PROJ); // 환경 변수 확인을 위한 로그 출력
+
   const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
 
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${process.env.KIROS_KEY_PROJ}` // Vercel 환경 변수 사용
+      'Authorization': `Bearer ${process.env.KIROS_KEY_PROJ}` // 환경 변수를 통해 API 키를 불러옴
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
