@@ -33,7 +33,7 @@ async function getMenuRecommendation(mood, weather, menuData) {
   const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
 
   // Vercel 클라이언트 환경 변수를 통해 OpenAI API 키 가져오기
-  const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY; // NEXT_PUBLIC 접두사로 브라우저에서 접근 가능
+  const apiKey = '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'; // NEXT_PUBLIC 접두사로 브라우저에서 접근 가능
 
   if (!apiKey) {
     console.error("API 키가 정의되지 않았습니다.");
