@@ -3,7 +3,7 @@ export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { mood, weather, menuData } = req.body;
 
-    const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY; // Vercel에서 설정한 환경변수 이름으로 수정
+    const apiKey = process.env.OPENAI_API_KEY; // 'NEXT_PUBLIC_' 없이 설정
 
     try {
       const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
