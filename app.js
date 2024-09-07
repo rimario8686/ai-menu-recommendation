@@ -9,21 +9,21 @@ async function getWeather() {
   // Open-Meteo API로 날씨 데이터 요청 (남양주 위도와 경도)
   const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=37.634&longitude=127.216&hourly=temperature_2m,precipitation,cloudcover&timezone=Asia/Seoul');
   const data = await response.json();
-  console.log("받아온 날씨 데이터: ", data);
+  console.log("받아온 날씨 데이터: ", data); // 받아온 날씨 데이터 확인
 
   // 현재 시간에 해당하는 데이터를 추출
   const temperature = data.hourly.temperature_2m[currentHour]; // 현재 시간대의 기온
   const precipitation = data.hourly.precipitation[currentHour]; // 현재 시간대의 강수량
   const cloudCover = data.hourly.cloudcover[currentHour]; // 현재 시간대의 구름 양
   
-  return { temperature, precipitation, cloudCover };
+  return { temperature, precipitation, cloudCover }; // 필요한 날씨 데이터를 반환
 }
 
 // 메뉴 데이터를 JSON 파일에서 불러오는 함수
 async function getMenuData() {
-  const response = await fetch('/menuData.json'); // 경로 수정 필요 시 반영
+  const response = await fetch('menuData.json');
   const data = await response.json();
-  return data.menus;
+  return data.menus; // 메뉴 데이터 반환
 }
 
 // GPT-3.5 API를 호출하여 메뉴를 추천받는 함수
@@ -32,14 +32,11 @@ async function getMenuRecommendation(mood, weather, menuData) {
 
   const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
 
-  // 환경 변수에서 API 키를 가져옵니다.
-  const apiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-
   const response = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}` // 발급받은 OpenAI API 키
+      'Authorization': `Bearer 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` // 발급받은 OpenAI API 키를 여기에 입력하세요.
     },
     body: JSON.stringify({
       model: "gpt-3.5-turbo",
@@ -62,7 +59,7 @@ async function getMenuRecommendation(mood, weather, menuData) {
       recommendation = recommendation.replace(regex, `<strong>${menu.name}</strong>`); // 메뉴 이름을 볼드 처리
     });
 
-    return recommendation;
+    return recommendation; // 볼드 처리된 추천 내용을 반환
   } else {
     throw new Error("응답에서 메뉴 추천을 가져올 수 없습니다.");
   }
@@ -74,15 +71,15 @@ async function recommendMenu() {
   console.log("입력한 기분: ", mood);
 
   const weather = await getWeather(); // 현재 날씨 데이터를 가져옴
-  console.log("현재 날씨: ", weather); 
+  console.log("현재 날씨: ", weather); // 받아온 날씨 데이터를 콘솔에 출력
   
   const menuData = await getMenuData(); // 메뉴 데이터를 불러옴
-  console.log("상점 메뉴 데이터: ", menuData);
+  console.log("상점 메뉴 데이터: ", menuData); // 메뉴 데이터 출력
 
   // GPT-3.5를 사용하여 메뉴 추천 받기
   try {
     const recommendation = await getMenuRecommendation(mood, weather, menuData);
-    console.log("추천된 메뉴: ", recommendation);
+    console.log("추천된 메뉴: ", recommendation); // 추천된 메뉴를 콘솔에 출력
 
     // 추천된 메뉴를 HTML로 출력 (볼드 태그 적용)
     document.getElementById('recommendation').innerHTML = recommendation;
