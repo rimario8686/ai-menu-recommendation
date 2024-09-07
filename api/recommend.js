@@ -1,9 +1,7 @@
-// api/recommend.js (Vercel에서 자동으로 서버 측으로 처리됨)
 export default async function handler(req, res) {
   if (req.method === 'POST') {
     const { mood, weather, menuData } = req.body;
-
-    const apiKey = process.env.OPENAI_API_KEY; // 'NEXT_PUBLIC_' 없이 설정
+    const apiKey = process.env.OPENAI_API_KEY; // 환경변수를 통해 API 키 가져옴
 
     try {
       const menuString = menuData.map(menu => `${menu.name} (${menu.category}): ${menu.description}`).join('\n');
@@ -12,7 +10,7 @@ export default async function handler(req, res) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`
+          'Authorization': `Bearer ${apiKey}` // API 키를 Authorization 헤더에 전달
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",
@@ -24,10 +22,25 @@ export default async function handler(req, res) {
       });
 
       const data = await response.json();
-      res.status(200).json({ recommendation: data.choices[0].message.content });
+      console.log("GPT-3.5의 응답: ", data); // 응답 데이터 로그 출력
 
+      if (response.ok && data.choices && data.choices.length > 0) {
+        let recommendation = data.choices[0].message.content;
+
+        // 추천된 메뉴 이름들을 볼드 처리
+        menuData.forEach(menu => {
+          const regex = new RegExp(menu.name, 'g');
+          recommendation = recommendation.replace(regex, `<strong>${menu.name}</strong>`);
+        });
+
+        res.status(200).json({ recommendation }); // 정상적으로 메뉴 추천 반환
+      } else {
+        console.error("OpenAI 응답 에러:", data); // 오류 응답 로그 출력
+        res.status(500).json({ message: "메뉴 추천을 가져올 수 없습니다." });
+      }
     } catch (error) {
-      res.status(500).json({ message: 'API 요청 중 오류가 발생했습니다.' });
+      console.error("API 요청 중 오류 발생:", error); // API 요청 에러 로그 출력
+      res.status(500).json({ message: "API 요청 중 오류가 발생했습니다." });
     }
   } else {
     res.status(405).json({ message: 'POST 요청만 가능합니다.' });
