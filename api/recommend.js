@@ -46,4 +46,4 @@ async function handler(req, res) {
   }
 }
 
-module.exports = handler;  // CommonJS 형식으로 모듈 내보내기
+module.exports = handler;
