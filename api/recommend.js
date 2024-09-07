@@ -21,6 +21,9 @@ export default async function handler(req, res) {
         })
       });
 
+      // 응답 상태와 상태 코드 출력
+      console.log("API 응답 상태:", response.ok);
+      console.log("API 응답 코드:", response.status);
       const data = await response.json();
       console.log("GPT-3.5의 응답: ", data); // 응답 데이터 로그 출력
 
@@ -41,8 +44,3 @@ export default async function handler(req, res) {
     } catch (error) {
       console.error("API 요청 중 오류 발생:", error); // API 요청 에러 로그 출력
       res.status(500).json({ message: "API 요청 중 오류가 발생했습니다." });
-    }
-  } else {
-    res.status(405).json({ message: 'POST 요청만 가능합니다.' });
-  }
-}
